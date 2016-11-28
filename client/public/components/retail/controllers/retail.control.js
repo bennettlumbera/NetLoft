@@ -10,10 +10,10 @@ retail
 
 		$http.get('http://127.0.0.1:8000/chains/', config)
         .success(function (data, status, headers, config) {
-        	console.log(data,"aa");
+        	console.log(data);
         })
         .error(function (data, status, header, config) {
-        	console.log(data,"bb");
+        	console.log(data);
         });
 
 }]);

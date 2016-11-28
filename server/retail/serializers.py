@@ -1,7 +1,6 @@
 from rest_framework import serializers
 from retail.models import Chain, Store, Employee
 
-
 class ChainSerializer(serializers.ModelSerializer):
     """ Serializer to represent the Chain model """
     class Meta:
