@@ -1,5 +1,3 @@
-<div ng-controller="RetailController">
-    <div>
-        {{ message }}
-    </div>
+<div>
+    {{ message }}
 </div>
