@@ -1,3 +1,5 @@
+
+```sh
 seperate server(Django Rest) and client(Angularjs) code
 client folder contains Angularjs code
 server folder contais Django code 
@@ -29,3 +31,5 @@ for running Angularjs :-
 ========================
 cd client (inside the client folder)
 npm start
+
+'''
