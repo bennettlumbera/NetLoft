@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'message',
     'property',
     'review',
-    'trip'
+    'trip',
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True

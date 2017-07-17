@@ -14,12 +14,13 @@ class Property(models.Model):
     amenities = models.TextField()
     number_of_bedrooms = models.IntegerField(max_length=2)
     number_of_bathrooms = models.IntegerField(max_length=2)
-    accommdates = models.IntegerField(max_length=2)
+    accommodates = models.IntegerField(max_length=2)
     times_viewed = models.IntegerField(max_length=4)
     updated_at = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now=True)
 
 class Property_Image(models.Model):
+    prop = models.ForeignKey(Property, related_name="prop_images")
     caption = models.CharField(max_length=40)
     image = ImageField(upload_to="property_images/", blank=False, null=False)
     updated_at = models.DateTimeField(auto_now_add=True)

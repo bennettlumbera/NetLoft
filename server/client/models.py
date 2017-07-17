@@ -19,13 +19,13 @@ class User(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 class Guest(models.Model):
+    user = models.ForeignKey(User, related_name="user_guest")
     about_me = models.TextField()
-    user = models.ForeignKey(User, related_name="guest_user")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
 class Host(models.Model):
+    user = models.ForeignKey(User, related_name="user_host")
     about_me = models.TextField()
-    user = models.ForeignKey(User, related_name="host_user")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
