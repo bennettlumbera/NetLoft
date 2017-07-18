@@ -43,8 +43,8 @@ INSTALLED_APPS = [
     'client',
     'favorite',
     'message',
-    'property',
     'review',
+    'place',
     'trip',
 ]
 
