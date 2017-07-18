@@ -8,17 +8,7 @@ Django using Rest Framework API
 Django run on port - 8000
 Angularjs run on port -8081
 
-steps to run :-
-git clone https://github.com/anand-tiwari/Django-angularjs-boilerplate.git
 
-creating virtual environment :-
-===============================
-virtualenv venv (python 2)
-or
-virtualenv -p python3 venv (python 3)
-
-installing reuirements :-
-==========================
 pip install -r requirements.txt
 
 for running Django :-

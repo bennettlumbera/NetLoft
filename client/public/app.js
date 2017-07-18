@@ -10,11 +10,16 @@
 
 var app = angular.module("app",["ngRoute"]);
 
-app.config(["$routeProvider", function($routeProvider){
+app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider){
   $routeProvider
-        .when("/retail", {
-          templateUrl: "components/retail/partials/retail.html",
-	        controller: "retail"
+        .when("/", {
+          templateUrl: "partials/home.html",
+	        controller: "homeController"
+        })
+        .when("/search", {
+          templateUrl: "partials/search.html",
+	        controller: "homeController"
         });
-		console.log("app.js: app.config was loaded")
+
+	$locationProvider.html5Mode(true);
 }]);
