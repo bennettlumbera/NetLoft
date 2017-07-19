@@ -2,26 +2,57 @@
 <html ng-app="app">
     <head>
         <meta charset="utf-8">
-        <title>Angular Sample - Retail Application</title>
+        <title>Netloft Project</title>
 
-    <!--  Angular Setup -->
+      <!--  Angular Setup -->
         <script src="bower_components/angular/angular.js"></script>
         <script src="bower_components/angular-route/angular-route.js"></script>
 
-    <!-- Application Setup -->
+      <!-- Application Setup -->
         <script src="public/app.js"></script>
-            <!-- <script src="public/appRoutes.js"></script> -->
+        <script src="public/javascript/root.js"></script>
 
-    <!--  Controllers -->
+      <!--  Controllers -->
         <script src="public/controllers/home.js"></script>
+        <script src="public/controllers/login.js"></script>
             <!-- <script src="public/components/retail/controllers/retail.control.js"></script> -->
 
-
-      <base href="/">
+      <!-- Bootstrap/CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="public/css/main.css">
+        <script src="public/bootstrap/bootstrap.js"></script>
     </head>
+
     <body>
-        <h1>navbar here....</h1>
+      <div id="navbar">
+        <div class="inline one_half left">
+          <p>Enter Destination</p>
+          <p>Enter Dates</p>
+          <p># of Guests</p>
+        </div>
+        <div class="inline one_half right">
+          <a href="">Become a Host</a>
+          <a href="">Help</a>
+          <a href="">Sign Up</a>
+          <a id="loginClick" onClick="function(){}">Log In</a>
+        </div>
+
+      </div>
         <!-- The dynamic templates will be served within this div -->
         <div ng-view></div>
+
+        <br><br>
+        <!-- Modal -->
+        <button id="myBtn">Open Modal</button>
+        <div id="myModal" class="modal">
+
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+          </div>
+
+        </div>
+      </div>
     </body>
 </html>

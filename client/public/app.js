@@ -8,10 +8,10 @@
 // 	'retail'
 // ]);
 
-var app = angular.module("app",["ngRoute"]);
+var app = angular.module("app",["ngRoute", "ui.bootstrap"])
 
-app.config(["$routeProvider", "$locationProvider", function($routeProvider, $locationProvider){
-  $routeProvider
+app.config(["$routeProvider", function($routeProvider){
+	$routeProvider
         .when("/", {
           templateUrl: "partials/home.html",
 	        controller: "homeController"
@@ -19,7 +19,10 @@ app.config(["$routeProvider", "$locationProvider", function($routeProvider, $loc
         .when("/search", {
           templateUrl: "partials/search.html",
 	        controller: "homeController"
-        });
+        })
+				.when("/login", {
+					templateUrl: "partials/home.html",
+					controller: "loginController"
+				});
 
-	$locationProvider.html5Mode(true);
 }]);
