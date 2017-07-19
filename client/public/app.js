@@ -27,6 +27,11 @@ app.config(["$routeProvider", function($routeProvider){
 				.when("/place", {
 					templateUrl: "partials/place.html",
 					controller: "placeController"
-				});
+				})
+				.when("/booking", {
+					templateUrl: "partials/booking.html",
+					controller: "bookingController"
+				})
+				;
 
 }]);
