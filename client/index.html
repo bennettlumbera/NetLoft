@@ -26,9 +26,15 @@
     <body>
       <div id="navbar">
         <div class="inline one_half left">
-          <p>Enter Destination</p>
-          <p>Enter Dates</p>
-          <p># of Guests</p>
+          <form class="navbar-form navbar-left">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Enter Destination">
+              Check in<input type="date" class="form-control" placeholder="Enter date">
+              Check out<input type="date" class="form-control" placeholder="Enter date">
+              <input type="number" class="form-control" placeholder="Number of guest">
+            </div>
+            <button type="submit" class="btn btn-default">Submit</button>
+          </form>
         </div>
         <div class="inline one_half right">
           <a href="#!/host">Become a Host</a>
