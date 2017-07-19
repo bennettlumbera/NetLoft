@@ -10,11 +10,11 @@
 
       <!-- Application Setup -->
         <script src="public/app.js"></script>
-        <script src="public/javascript/root.js"></script>
 
       <!--  Controllers -->
         <script src="public/controllers/home.js"></script>
-        <script src="public/controllers/login.js"></script>
+        <script src="public/controllers/host.js"></script>
+        <script src="public/controllers/place.js"></script>
             <!-- <script src="public/components/retail/controllers/retail.control.js"></script> -->
 
       <!-- Bootstrap/CSS -->
@@ -31,7 +31,7 @@
           <p># of Guests</p>
         </div>
         <div class="inline one_half right">
-          <a href="">Become a Host</a>
+          <a href="#!/host">Become a Host</a>
           <a href="">Help</a>
           <a href="">Sign Up</a>
           <a id="loginClick">Log In</a>
@@ -42,7 +42,9 @@
         <div ng-view></div>
         <br>
         <br>
-        
+
+
+        <a href="#!/">home</a>
           <!-- Modal -->
           <div id="myModal" class="modal">
             <div class="modal-content">

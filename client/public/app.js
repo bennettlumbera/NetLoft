@@ -20,9 +20,13 @@ app.config(["$routeProvider", function($routeProvider){
           templateUrl: "partials/search.html",
 	        controller: "homeController"
         })
-				.when("/login", {
-					templateUrl: "partials/home.html",
-					controller: "loginController"
+				.when("/host", {
+					templateUrl: "partials/host.html",
+					controller: "hostController"
+				})
+				.when("/place", {
+					templateUrl: "partials/place.html",
+					controller: "placeController"
 				});
 
 }]);
