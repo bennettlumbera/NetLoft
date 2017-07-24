@@ -44,5 +44,6 @@ router.register(prefix='employees', viewset=EmployeeViewSet)
 
 urlpatterns = [
 	url(r'^', include(router.urls)),
-    url(r'^admin/', admin.site.urls),
+    # url(r'^admin/', admin.site.urls),
+    url(r'^api/users/', include('client.urls', namespace='users')),
 ]
