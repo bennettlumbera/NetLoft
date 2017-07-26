@@ -3,7 +3,8 @@
 
 var express = require('express');
     server = express();
-    path = require("path"),
+    path = require("path");
+    routes = require("../client/routes.js");
 
 server.use(express.static(__dirname));
 server.use(express.static(path.join(__dirname, "public")));

@@ -2,6 +2,8 @@ from __future__ import unicode_literals
 
 from django.db import models
 from client.models import Host
+from django.core.validators import MaxValueValidator, MinValueValidator
+
 
 # Create your models here.
 class Place(models.Model):
@@ -14,10 +16,10 @@ class Place(models.Model):
     house_rules = models.TextField()
     cancellation_policy = models.CharField(max_length=10)
     amenities = models.TextField()
-    number_of_bedrooms = models.IntegerField(max_length=2)
-    number_of_bathrooms = models.IntegerField(max_length=2)
-    accommodates = models.IntegerField(max_length=2)
-    times_viewed = models.IntegerField(max_length=4)
+    number_of_bedrooms = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
+    number_of_bathrooms = models.DecimalField(max_digits=4, decimal_places=1)
+    accommodates = models.IntegerField(validators=[MinValueValidator(1), MaxValueValidator(100)])
+    times_viewed = models.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(100)])
     updated_at = models.DateTimeField(auto_now_add=True)
     created_at = models.DateTimeField(auto_now=True)
 
