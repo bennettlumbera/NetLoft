@@ -64,9 +64,9 @@ class UserManager(models.Manager):
             messages['zip_code'].append("Zip code must be all digits.")
         if valid == True:
             hashed = bcrypt.hashpw(user_info['password'].encode(), bcrypt.gensalt())
-            user = User.objects.create(first_name = request.POST['first_name'], last_name = request.POST['last_name'], birthday = request.POST['birthday'], email = request.POST['email'], password = hashed, phone_number = request.POST['phone_number'], city = request.POST['city'], state = request.POST['state'], country = request.POST['country'], zip_code = request.POST['zip_code'], profile_image = request.POST['profile_image'])
+            user = User.objects.create(first_name = user_info['first_name'], last_name = user_info['last_name'], birthday = user_info['birthday'], email = user_info['email'], password = hashed, phone_number = user_info['phone_number'], city = user_info['city'], state = user_info['state'], country = user_info['country'], zip_code = user_info['zip_code'])
             user.save()
-            return {'user': {'first_name': request.POST['first_name'], 'id': user.id}}
+            return {'user': {'first_name': user_info['first_name'], 'id': user.id}}
         else:
             return {'messages': messages}
 
@@ -77,7 +77,7 @@ class UserManager(models.Manager):
         }
         valid = True
         if not EMAIL_REGEX.match(user_info['email']):
-            messages['email'].append("Email is not a valid email.")
+            messages['email'].append("Email is not a valid email!")
             valid = False
         if User.objects.filter(email = user_info['email']):
             hashed = User.objects.get(email = user_info['email']).password
@@ -93,7 +93,7 @@ class UserManager(models.Manager):
             messages['email'].append("Your email is not correct!")
             valid = False
         if valid == True:
-            user = User.objects.get(email = request.POST['email'])
+            user = User.objects.filter(email = user_info['email'])[:1]
             return {'user':user}
         else:
             return {'messages': messages}
