@@ -108,7 +108,7 @@ class User(models.Model):
     city = models.CharField(max_length=30)
     state = models.CharField(max_length=2)
     country = models.CharField(max_length=30)
-    zip_code = models.IntegerField(max_length=10)
+    zip_code = models.CharField(max_length=10)
     profile_image = models.ImageField(upload_to="profile_pic/", blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
